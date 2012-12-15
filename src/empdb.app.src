@@ -1,0 +1,48 @@
+{application, empdb,
+ [
+  {description, "The Database methods for EMP."},
+  {vsn, "0.1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  emplog
+                 ]},
+  {env, []},
+  {mod, { empdb_app, [
+            % This will be the names of the other nodes you would like EMPDB to
+            % be started on. DO NOT INCLUDE THE ROOT NODE, it will 
+            % automatically be inserted.
+            {db_nodes, []},
+  
+            % The options to get passed to the installer program when the 
+            % database is being installed for the first time.
+            {db_init_opts, [
+                % How should EMPDB be distributed? By default its distribution 
+                % model is 'local_only', to make it distributed, specify what 
+                % other nodes (besides the current) to distribute to.
+                {dist, local_only},
+                
+                % What kind of persistence do you want your Emp node to have?
+                % default is disc_copies, other options are disc_only_copies 
+                % and ram_copies see Mnesia documentation for more information.
+                {persist, disc_copies},
+                
+                
+                % Where do you want the Mnesia logging/dumps to go?
+                {mnesia_dir, "db"} % prepends ~/.emp/
+                
+               ]},
+                       
+                           
+            % The arguments to pass to the database back end every time it gets
+            % start up.
+            {db_args, [
+            
+                % We need to specify this here as well.
+                {mnesia_dir, "db"} % prepends ~/.emp/
+                
+              ]}
+  
+        ]}}
+ ]}.
