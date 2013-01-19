@@ -41,7 +41,7 @@
 -module(empdb).
 
 -include("empdb.hrl").
--include_lib("$EMP_ROOT/lib/empinternal.hrl").
+-include_lib("empd/include/empinternal.hrl").
 
 %%% ======================================================================
 %%% Edit these definitions if Syou would like to utilize a different  

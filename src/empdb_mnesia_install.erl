@@ -29,7 +29,7 @@
 -include("empdb.hrl").
 -include("empdb_mnesia_schema.hrl").
 -include_lib("stdlib/include/qlc.hrl").
--include_lib("$EMP_ROOT/lib/empinternal.hrl").
+-include_lib("empd/include/empinternal.hrl").
 
 % export our only public function.
 -export([

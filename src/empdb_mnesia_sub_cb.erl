@@ -29,7 +29,7 @@
 -include("empdb_mnesia_schema.hrl").
 -include_lib("stdlib/include/qlc.hrl").
 
--include_lib("$EMP_ROOT/lib/empinternal.hrl").
+-include_lib("empd/include/empinternal.hrl").
 
 -export([
     add_subscription/4,         % Subscription Management
