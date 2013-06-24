@@ -309,14 +309,15 @@ get_events( PlugID ) ->
 %% @end
 -spec install_plugin( atom(), [binary()] ) -> possible_failure( ok ).
 install_plugin(ModuleName, Files) -> 
-    ?EMPDB_SUBSCRIPTION_CALLBACKS:install_plugin(ModuleName, Files).
+    ?EMPDB_INSTALLATION_CALLBACKS:install_plugin(ModuleName, Files).
 
 %% @doc
 %%  Removes the files from the database for an installed plugin. This does
 %%  not unregister the plugin. 
 %% @end
 -spec uninstall_plugin( atom() ) -> possible_failure( ok ).
-uninstall_plugin(ModuleName)-> ?EMPDB_SUBSCRIPTION_CALLBACKS:uninstall_plugin(ModuleName).
+uninstall_plugin(ModuleName)-> 
+    ?EMPDB_INSTALLATION_CALLBACKS:uninstall_plugin(ModuleName).
 
 %% @doc 
 %%  Grab a system configuration from storage. This is called fairly frequently
